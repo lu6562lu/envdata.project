@@ -1,5 +1,4 @@
-# _config.yml
-source: docs
-destination: docs/_site
+source: .
+destination: ./_site
 sass:
   sass_dir: assets/css
