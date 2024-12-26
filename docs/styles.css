@@ -89,6 +89,38 @@ pre code {
     border-radius: 5px;
 }
 
+/* 參考資料 */
+.references {
+    padding: 40px 0;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+.references h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+.references ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.references li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.references li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.references li a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+
 /* 底部頁腳 */
 .footer {
     background: #333;
