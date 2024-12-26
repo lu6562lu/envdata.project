@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>專題展示網站</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>專題網站</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- 頂部導航欄 -->
     <header class="navbar">
         <div class="container">
-            <h1 class="logo">專題展示網站</h1>
+            <h1 class="logo">專題網站</h1>
             <nav>
                 <ul>
-                    <li><a href="#introduction">專題介紹</a></li>
-                    <li><a href="#code-demo">程式碼展示</a></li>
+                    <li><a href="#intro">專題介紹</a></li>
+                    <li><a href="#code">程式碼展示</a></li>
                     <li><a href="#charts">圖表展示</a></li>
                     <li><a href="#discussion">結果討論</a></li>
                 </ul>
@@ -23,23 +23,22 @@
     </header>
 
     <!-- 專題介紹 -->
-    <section class="hero" id="introduction">
+    <section class="intro" id="intro">
         <div class="container">
             <h2>專題介紹</h2>
-            <p>這是一個專題網站範例，旨在展示專題的內容，包括程式碼示例、數據分析圖表和結果討論。</p>
+            <p>這是一個專題展示的網站，涵蓋了專題的介紹、程式碼展示、圖表展示以及結果討論。</p>
         </div>
     </section>
 
     <!-- 程式碼展示 -->
-    <section class="code-demo" id="code-demo">
+    <section class="code-display" id="code">
         <div class="container">
             <h2>程式碼展示</h2>
             <pre>
-                <code>
-# Python 範例程式碼
-def hello_world():
-    print("Hello, world!")
-                </code>
+<code>
+def example_function():
+    print("這是程式碼展示範例！")
+</code>
             </pre>
         </div>
     </section>
@@ -48,7 +47,8 @@ def hello_world():
     <section class="charts" id="charts">
         <div class="container">
             <h2>圖表展示</h2>
-            <img src="assets/images/chart-example.png" alt="圖表範例" />
+            <p>以下是專題數據的圖表展示：</p>
+            <img src="chart-placeholder.png" alt="圖表展示" class="chart">
         </div>
     </section>
 
@@ -56,19 +56,14 @@ def hello_world():
     <section class="discussion" id="discussion">
         <div class="container">
             <h2>結果討論</h2>
-            <p>根據專題結果，我們得出以下結論：</p>
-            <ul>
-                <li>結論 1: ...</li>
-                <li>結論 2: ...</li>
-                <li>結論 3: ...</li>
-            </ul>
+            <p>這裡是對專題結果的分析與討論。</p>
         </div>
     </section>
 
-    <!-- 頁腳 -->
+    <!-- 底部頁腳 -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 專題展示網站 | 聯絡方式：097038lulu@gmail.com</p>
+            <p>© 2024 專題網站 | 聯絡方式：097038lulu@gmail.com</p>
         </div>
     </footer>
 </body>
