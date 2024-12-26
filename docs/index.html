@@ -3,47 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>專題網站</title>
+    <title>專題展示網站</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body>
     <!-- 頂部導航欄 -->
     <header class="navbar">
         <div class="container">
-            <h1 class="logo">專題網站</h1>
+            <h1 class="logo">專題展示網站</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#introduction">專題介紹</a></li>
+                    <li><a href="#code-demo">程式碼展示</a></li>
+                    <li><a href="#charts">圖表展示</a></li>
+                    <li><a href="#discussion">結果討論</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- 橫幅區域 -->
-    <section class="hero" id="home">
+    <!-- 專題介紹 -->
+    <section class="hero" id="introduction">
         <div class="container">
-            <h1>歡迎來到我們的專題網站</h1>
-            <p>這是專題的簡要介紹和目標描述。</p>
+            <h2>專題介紹</h2>
+            <p>這是一個專題網站範例，旨在展示專題的內容，包括程式碼示例、數據分析圖表和結果討論。</p>
         </div>
     </section>
 
-    <!-- 內容區域 -->
-    <section class="content">
+    <!-- 程式碼展示 -->
+    <section class="code-demo" id="code-demo">
         <div class="container">
-            <h2>關於專題</h2>
-            <p>這裡是專題的詳細內容。</p>
+            <h2>程式碼展示</h2>
+            <pre>
+                <code>
+# Python 範例程式碼
+def hello_world():
+    print("Hello, world!")
+                </code>
+            </pre>
         </div>
     </section>
 
-    <!-- 底部頁腳 -->
+    <!-- 圖表展示 -->
+    <section class="charts" id="charts">
+        <div class="container">
+            <h2>圖表展示</h2>
+            <img src="assets/images/chart-example.png" alt="圖表範例" />
+        </div>
+    </section>
+
+    <!-- 結果討論 -->
+    <section class="discussion" id="discussion">
+        <div class="container">
+            <h2>結果討論</h2>
+            <p>根據專題結果，我們得出以下結論：</p>
+            <ul>
+                <li>結論 1: ...</li>
+                <li>結論 2: ...</li>
+                <li>結論 3: ...</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 專題網站 | 聯絡方式：097038lulu@gmail.com</p>
+            <p>© 2024 專題展示網站 | 聯絡方式：097038lulu@gmail.com</p>
         </div>
     </footer>
 </body>
 </html>
-
