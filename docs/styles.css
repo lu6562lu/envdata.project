@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth; /* 平滑滾動效果 */
 }
 
 body {
@@ -26,11 +27,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    animation: fadeInDown 1s ease-in-out; /* 標題動畫 */
 }
 
 .navbar ul {
@@ -51,6 +57,7 @@ body {
 
 .navbar ul li a:hover {
     color: #76c7c0;
+    transform: scale(1.1); /* 懸停放大效果 */
 }
 
 /* Hero Section */
@@ -59,6 +66,7 @@ body {
     color: white;
     text-align: center;
     padding: 100px 20px;
+    animation: fadeIn 2s ease-in-out; /* Hero 區域淡入效果 */
 }
 
 .hero h2 {
@@ -76,6 +84,13 @@ body {
 section {
     padding: 60px 20px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+section:nth-child(even) {
+    animation-delay: 0.5s; /* 交替延遲淡入效果 */
 }
 
 section h2 {
@@ -98,6 +113,8 @@ section p {
     border-radius: 8px;
     overflow-x: auto;
     font-family: 'Courier New', Courier, monospace;
+    transform: scale(0.95);
+    animation: popUp 1.5s ease-in-out forwards;
 }
 
 /* Charts Section */
@@ -107,6 +124,8 @@ section p {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 /* Footer */
@@ -116,4 +135,48 @@ section p {
     text-align: center;
     padding: 20px 0;
     font-size: 0.9rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
