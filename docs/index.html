@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,38 +10,40 @@
     <!-- 頂部導航欄 -->
     <header class="navbar">
         <div class="container">
-            <h1 class="logo">期末專題發表</h1>
+            <h1 class="logo">利用微氣候資料預估太陽能發電量</h1>
             <nav>
                 <ul>
                     <li><a href="#intro">專題介紹</a></li>
-                    <li><a href="#code">程式碼展示</a></li>
-                    <li><a href="#charts">圖表展示</a></li>
-                    <li><a href="#discussion">結果討論</a></li>
+                    <li><a href="#goal">專題目標</a></li>
+                    <li><a href="#data">資料來源</a></li>
+                    <li><a href="#models">模型方法</a></li>
+                    <li><a href="#results">結果與討論</a></li>
+                    <li><a href="#references">參考資料</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero 區域 -->
     <section class="hero">
         <div class="container">
-            <h2>利用區域微氣候資料預測太陽能發電量</h2>
-            <p>參考AI CUP 2024教育部大專校院人工智慧競賽(1)，根據能源科技相關文獻，選擇出微氣候環境因子進行量測、收集資料，期望透過實作更了解台灣綠能產業。</p>
+            <h1>環境資料科學期末專題</h1>
+            <p>結合微氣候數據與現代機器學習模型，預估太陽能發電量。</p>
         </div>
     </section>
 
     <!-- 專題介紹 -->
     <section class="intro" id="intro">
         <div class="container">
-            <h2>專題與資料介紹</h2>
-            <p>這是一個專題展示的網站，涵蓋了專題的介紹、程式碼展示、圖表展示以及結果討論。</p>
+            <h2>專題介紹</h2>
+            <p>參考 AI CUP 2024，由微氣候數據分析並預估太陽能發電量，使用多種模型進行數據處理與分析。</p>
         </div>
     </section>
 
     <!-- 程式碼展示 -->
     <section class="code-display" id="code">
         <div class="container">
-            <h2>模型訓練方法介紹及程式碼展示</h2>
+            <h2>程式碼展示</h2>
             <pre>
 <code>
 def example_function():
@@ -51,20 +53,51 @@ def example_function():
         </div>
     </section>
 
-    <!-- 圖表展示 -->
-    <section class="charts" id="charts">
+    <!-- 專題目標 -->
+    <section class="goal" id="goal">
         <div class="container">
-            <h2>圖表展示</h2>
-            <p>以下是專題數據的圖表展示：</p>
-            <img src="chart-placeholder.png" alt="圖表展示" class="chart">
+            <h2>專題目標</h2>
+            <ul>
+                <li>預測每日從上午 9:00 開始到晚上 5:00 的太陽能發電量（每 10 分鐘）。</li>
+                <li>協助改善台灣能源規劃與太陽能發電預測。</li>
+            </ul>
         </div>
     </section>
 
-    <!-- 結果討論 -->
-    <section class="discussion" id="discussion">
+    <!-- 資料來源 -->
+    <section class="data" id="data">
         <div class="container">
-            <h2>結果討論</h2>
-            <p>這裡是對專題結果的分析與討論。</p>
+            <h2>資料來源</h2>
+            <h3>訓練數據</h3>
+            <p>來自 T-Brain 資料庫，包含 17 個測站，每測站提供從 2024 年 1 月到 10 月約 2000 天的數據，記錄每分鐘的氣溫、濕度、風速、太陽能輻射量等。</p>
+            <h3>測試數據</h3>
+            <p>格式與訓練數據一致，提供約 600 天的測試數據。</p>
+        </div>
+    </section>
+
+    <!-- 模型方法 -->
+    <section class="models" id="models">
+        <div class="container">
+            <h2>模型方法</h2>
+            <h3>數據處理</h3>
+            <p>數據經過平滑處理與缺失值補齊，並四捨五入保留至小數點後兩位。</p>
+            <h3>使用模型</h3>
+            <ul>
+                <li>SVM（支持向量機）</li>
+                <li>XGBoost</li>
+                <li>SVM + XGBoost</li>
+                <li>MLP + Transformer</li>
+                <li>MLP + LSTM</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 結果與討論 -->
+    <section class="results" id="results">
+        <div class="container">
+            <h2>結果與討論</h2>
+            <p>我們比較了多種模型的結果，最終發現僅使用 MLP（多層感知機）的模型能提供最佳表現，準確率達 303 分（報名組 934 組）。</p>
+            <img src="results-chart.png" alt="結果圖表" class="chart">
         </div>
     </section>
 
@@ -73,9 +106,10 @@ def example_function():
         <div class="container">
             <h2>參考資料</h2>
             <ul>
-                <li><a href="https://www.aicup.tw/ai-cup-2024-competition" target="https://www.aicup.tw/ai-cup-2024-competition">資源 1: AI CUP 2024教育部大專校院人工智慧競賽</a></li>
-                <li><a href="https://example.com/resource2" target="_blank">資源 2: 技術文件</a></li>
-                <li><a href="https://example.com/resource3" target="_blank">資源 3: 圖表生成工具</a></li>
+                <li><a href="https://www.aicup.tw/ai-cup-2024-competition" target="_blank">AI CUP 2024 資料</a></li>
+                <li><a href="https://tbrain.trendmicro.com.tw/Competitions/Details/36" target="_blank">T-Brain 賽事</a></li>
+                <li><a href="https://theaisummer.com/transformer/" target="_blank">Transformer 教學</a></li>
+                <li><a href="https://www.researchgate.net/publication/345327934_Degradation_state_recognition_of_piston_pump_based_on_ICEEMDAN_and_XGBoost" target="_blank">相關技術文獻</a></li>
             </ul>
         </div>
     </section>
