@@ -71,23 +71,38 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #76c7c0, #004d7a);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    animation: fadeIn 2s ease-in-out; /* Hero 區域淡入效果 */
+    position: relative; /* 讓區塊在文檔流中正常顯示 */
+    background: linear-gradient(to bottom, #004d7a, #00b4db); /* 漸變背景 */
+    color: white; /* 白色文字 */
+    text-align: center; /* 置中 */
+    padding: 100px 20px; /* 適當的內距 */
+    height: 100vh; /* 讓 Hero 區域佔滿視窗高度 */
+    display: flex; /* 使用 FlexBox 方便布局 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    z-index: 1; /* 確保位於導航欄之下，但在背景之上 */
 }
 
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+body {
+    margin: 0; /* 避免 margin 影響視覺效果 */
 }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
+.container {
+    position: relative; /* 確保內部內容跟父層協調 */
+    z-index: 2; /* 優化層次控制 */
 }
+
+.hero::after {
+    content: ''; /* 加入一個背景效果 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明覆蓋效果 */
+    z-index: 1; /* 置於文字與背景之間 */
+}
+
 
 /* Content Sections */
 section {
