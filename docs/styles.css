@@ -3,8 +3,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
     background-color: #fff;
+    color: #333;
 }
 
 /* 頂部導航欄 */
@@ -12,45 +12,93 @@ body {
     background-color: #026b70;
     color: #fff;
     padding: 10px 20px;
-    white-space: nowrap;
-}
-
-.navbar .container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* 允許換行 */
 }
 
 .navbar .logo {
     font-size: 20px;
     font-weight: bold;
-    color: #fff;
     margin: 0;
 }
 
-.navbar nav ul {
+/* 漢堡選單按鈕 */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* 小螢幕顯示 */
+}
+
+/* 選單樣式 */
+.menu {
+    display: none; /* 預設隱藏 */
+    flex-direction: column;
+    background-color: #026b70;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* 自動換行 */
+    text-align: center;
 }
 
-.navbar nav ul li {
-    margin: 0;
+.menu ul li {
+    margin: 10px 0;
 }
 
-.navbar nav ul li a {
+.menu ul li a {
     text-decoration: none;
-    font-size: 16px;
     color: #fff;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.navbar nav ul li a:hover {
+.menu ul li a:hover {
     color: #03989e;
+}
+
+/* 大螢幕樣式 */
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* 小螢幕樣式 */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* 小螢幕顯示按鈕 */
+    }
+
+    .menu.active {
+        display: flex;
+    }
 }
 
 /* Hero Section */
@@ -159,40 +207,5 @@ pre {
     }
     to {
         opacity: 1;
-    }
-}
-
-/* 響應式設計 */
-@media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        padding: 10px;
-    }
-
-    .navbar .logo {
-        font-size: 18px;
-    }
-
-    .navbar nav ul li a {
-        font-size: 14px;
-    }
-
-    section {
-        padding: 30px 10px;
-    }
-
-    .footer {
-        padding: 15px;
     }
 }
