@@ -9,21 +9,19 @@ body {
 
 /* 頂部導航欄 */
 .navbar {
-    background-color: #026b70; /* 背景色 */
-    color: #fff; /* 文字顏色 */
+    background-color: #026b70;
+    color: #fff;
     padding: 10px 20px;
-    text-align: center;
-    white-space: nowrap; /* 禁止文字換行 */
+    white-space: nowrap;
 }
 
-/* 導航欄容器 */
 .navbar .container {
-    display: flex; /* 使用 Flexbox 對齊 */
-    justify-content: space-between; /* 兩端對齊 */
-    align-items: center; /* 垂直置中 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 允許換行 */
 }
 
-/* 導航標誌 */
 .navbar .logo {
     font-size: 20px;
     font-weight: bold;
@@ -31,44 +29,44 @@ body {
     margin: 0;
 }
 
-/* 導航選單 */
 .navbar nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 選單水平排列 */
-    gap: 20px; /* 選單項目間距 */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* 自動換行 */
 }
 
-/* 導航選單項目 */
 .navbar nav ul li {
     margin: 0;
 }
 
-/* 導航連結樣式 */
 .navbar nav ul li a {
     text-decoration: none;
     font-size: 16px;
-    color: #fff; /* 連結文字顏色 */
-    transition: color 0.3s ease; /* 添加懸停過渡效果 */
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
-/* 懸停效果 */
 .navbar nav ul li a:hover {
-    color: #03989e; /* 滑鼠懸停時變色 */
+    color: #03989e;
 }
-
 
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #026b70, #03989e);
     color: #fff;
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero h2 {
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 20px;
     animation: fadeIn 1s ease-in-out;
 }
@@ -95,6 +93,17 @@ body {
     color: #fff;
 }
 
+/* 響應式 Hero Section */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
 /* 各區域 */
 section {
     padding: 50px 20px;
@@ -104,6 +113,7 @@ section {
 .container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* 程式碼展示 */
@@ -121,6 +131,13 @@ pre {
     max-width: 600px;
     margin: 20px auto;
     display: block;
+}
+
+/* 響應式圖表 */
+@media (max-width: 768px) {
+    .chart {
+        max-width: 100%;
+    }
 }
 
 /* 底部頁腳 */
@@ -142,5 +159,40 @@ pre {
     }
     to {
         opacity: 1;
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        font-size: 18px;
+    }
+
+    .navbar nav ul li a {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    .footer {
+        padding: 15px;
     }
 }
