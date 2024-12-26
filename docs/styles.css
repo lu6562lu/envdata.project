@@ -1,4 +1,166 @@
-/* 加入動畫關鍵影格 */
+/* 通用樣式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #f0f0f0;
+    background-color: #1c1c1c;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 頂部導航欄 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1c1c1c;
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d4af37; /* 金色 */
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #d4af37;
+    border-color: #d4af37;
+}
+
+/* Hero 區域 */
+.hero {
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 200px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* 區域標題樣式 */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* 程式碼展示 */
+.code-display {
+    background: #262626;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.code-display pre {
+    background: #1c1c1c;
+    color: #d4af37;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* 圖表展示 */
+.charts img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.charts img:hover {
+    transform: scale(1.05);
+}
+
+/* 底部頁腳 */
+.footer {
+    background: #262626;
+    color: #d4af37;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer p a {
+    color: #d4af37;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer p a:hover {
+    color: #f0f0f0;
+}
+
+/* 動畫效果 */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -10,153 +172,24 @@
     }
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.animate {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
-/* 初始化動畫效果 */
-.animate-fadeIn {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.animate-slideIn {
-    animation: slideIn 1.2s ease-in-out;
-}
-
-/* Hero 區域動畫 */
-.hero {
-    position: relative;
-    background: linear-gradient(to right, #0077b6, #00b4d8);
-    color: #fff;
-    text-align: center;
-    padding: 150px 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 2s ease-in-out; /* Hero 區域淡入動畫 */
-}
-
-.hero h2 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    animation: slideIn 1.5s ease-in-out;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    line-height: 1.5;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* 專題介紹動畫 */
+/* 讓每個區塊稍有延遲 */
 .intro {
-    background: #f8f9fa;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.5s;
 }
 
-.intro h2 {
-    font-size: 2.5rem;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
-
-.intro p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-/* 程式碼展示動畫 */
 .code-display {
-    background: #1a1a1a;
-    color: #00b4d8;
-    padding: 40px;
-    border-radius: 8px;
-    animation: fadeIn 1s ease-in-out;
+    animation-delay: 1s;
 }
 
-.code-display h2 {
-    font-size: 2rem;
-    color: #00b4d8;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* 圖表展示動畫 */
 .charts {
-    background: #ffffff;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
+    animation-delay: 1.5s;
 }
 
-.charts h2 {
-    font-size: 2.5rem;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
-
-.charts img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #00b4d8;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: slideIn 1.5s ease-in-out;
-}
-
-/* 結果討論動畫 */
-.discussion {
-    background: #f8f9fa;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.discussion h2 {
-    font-size: 2.5rem;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
-
-.discussion p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-/* 參考資料動畫 */
 .references {
-    background: #ffffff;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.references h2 {
-    font-size: 2.5rem;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
-
-.references ul li a {
-    color: #00b4d8;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* 導航連結點擊效果 */
-.navbar nav ul li a:hover {
-    color: #0077b6;
-    transform: scale(1.1);
-    transition: all 0.3s ease;
+    animation-delay: 2s;
 }
