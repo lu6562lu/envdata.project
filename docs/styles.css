@@ -1,0 +1,99 @@
+/* 基本樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 容器樣式 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 導航欄 */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* 區域樣式 */
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 專題介紹 */
+.intro h2,
+.code-display h2,
+.charts h2,
+.discussion h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* 程式碼展示 */
+pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+pre code {
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* 圖表展示 */
+.charts img {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 底部頁腳 */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
